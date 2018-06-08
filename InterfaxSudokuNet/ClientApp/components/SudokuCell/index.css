@@ -1,0 +1,37 @@
+.sudoku-cell {
+    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+      -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;         /* Opera/IE 8+ */
+    border: 0.5px solid black;
+    padding: 0;
+    margin: 0;
+    height: 40px;
+    width: 40px;
+    text-align: center;
+    font-size: 28px;
+}
+
+input.sudoku-cell:focus {
+    background: #ffc800;
+  }
+
+  .sudoku-cell.sudoku-cell-border-top{
+    border-top:2px solid black;
+  }
+  .sudoku-cell.sudoku-cell-border-border-left{
+    border-left: 2px solid black;
+  }
+  .sudoku-cell.light{
+      background-color: #fff;
+  }
+  .sudoku-cell.bright{
+      background-color: #efabc7;
+  }
+  .sudoku-cell.conflict{
+      background-color: red;
+  }
+  .sudoku-cell.conflict_with{
+    border: 1px solid red;
+  }
+  input[type="text"].light:disabled{background-color:#ededed;}
+  input[type="text"].bright:disabled{background-color:#da78a1;}
