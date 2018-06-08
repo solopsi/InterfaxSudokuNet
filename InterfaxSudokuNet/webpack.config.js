@@ -4,9 +4,9 @@ const webpack = require('webpack');
 const bundleOutputDir = './wwwroot/dist';
 
 module.exports = {
-    entry: [        
-        './ClientApp/index.js'
-    ],
+    entry: {
+        index: './ClientApp/index.js'        
+    },
     module: {
         rules: [
             { test: /\.(js|jsx)$/, exclude: /node_modules/, use: [{loader: 'babel-loader', options: { presets: ['es2015', 'stage-0', 'react']}}]},
@@ -18,13 +18,15 @@ module.exports = {
         extensions: ['*', '.js', '.jsx']
     },
     output: {
-        path: path.join(__dirname, bundleOutputDir),
+        path: path.join(__dirname, bundleOutputDir), 
         publicPath: '/dist',
-        filename: 'bundle.js'
+        filename: '[name].bundle.js',
+        chunkFilename: '[name].bundle.js'
     },
     
     devServer: {
         contentBase: '~/dist',
         hot: true
-    }
+    },
+    mode: 'production'
 };
