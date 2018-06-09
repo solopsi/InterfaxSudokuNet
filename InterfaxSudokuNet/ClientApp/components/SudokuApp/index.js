@@ -3,6 +3,7 @@ import Grid from '../SudokuGrid';
 import model from '../SudokuModel';
 import logo from './logo.svg';
 import './index.css';
+import { newGame, verifyGame, activeCell, openCell } from '../../actions/SudokuActions';
 
 class SudokuApp extends Component {
 
@@ -59,9 +60,9 @@ class SudokuApp extends Component {
     });
   }
 
-  handleFocusCell = (i,j) =>{
-    this.setState(prevState =>{
-      return {focusedCell: this.stringify(i, j)}
+    handleFocusCell = (i, j) => {                
+        this.setState(prevState =>{
+            return {focusedCell: this.stringify(i, j)}
     });
   }
 
